@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="Controller">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,19 +18,18 @@
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
-        <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-cookies.js"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-cookies.min.js"></script>
         <script src="js/jquery.js"></script> 
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.prettyPhoto.js"></script>
         <script src="js/jquery.isotope.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/wow.min.js"></script>
-        <script src="controller.js"></script>
         <script src="js/jquery.mask.js"></script>
         <script src="js/bootstrap-datepicker.js"></script>
         <script src="js/locales/bootstrap-datepicker.pt-BR.js"></script>
         <script src="js/cadastro_fisica.js"></script>
-        <script src="/front/controllers/controller"> </script>
+        <script src="fronts/controller/controller.js"></script>
     </head>
 
 <body ng-controller="Controller" class="container-fluid">
@@ -54,22 +53,22 @@
         <div class="row">
             <div class="form-group col-md-4">
                 <label>Nome</label>
-                <input  type="text" class="form-control" ng-model="produtos.nome" placeholder="Insira o Nome" maxlength="14">
+                <input  type="text" class="form-control" ng-model="produto.descricao" placeholder="Descrição" >
         </div>
             <div class="form-group col-md-4">
                 <label>Quantidade</label>
-                <input type="number" class="form-control" ng-model="produtos.quantidade" placeholder="Insira a Quantidade">
+                <input type="number" class="form-control" ng-model="produto.quantidade" placeholder="Quantidade">
             </div>
             <div class="form-group col-md-4">
                 <label>Valor</label>
-                <input type="number" class="form-control" ng-model="produtos.valor" placeholder="Insira o Valor">
+                <input type="number" class="form-control" ng-model="produto.valor" placeholder="Valor">
             </div>
         </div>
                             
                     </div class="row">
                         <div class="form-inline">
                             <div class="form-group"> 
-                                <button  type="button" class="btn btn-primary" ng-click="cadastroProdutoServicos()" >Cadastrar</button>
+                                <button  type="button" class="btn btn-primary" ng-click="cadastroProduto()" >Cadastrar</button>
                             </div>
                         </div>
                     </div>    

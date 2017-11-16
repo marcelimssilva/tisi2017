@@ -43,6 +43,13 @@ controller.controller('Controller', function ($scope, $http, $cookies) {
             });
     };
 
+    var cadastrarProduto = function () {
+        $http.post('http://localhost:3000/cadastrarProduto/', $scope.produto)
+            .then(function (response) {
+                alert("Cadastro realizado com Sucesso !!!");
+            });
+    };
+
     $scope.entrar = function () {
         consultaUsuario();
     };
@@ -61,6 +68,10 @@ controller.controller('Controller', function ($scope, $http, $cookies) {
 
     $scope.cadastroServico = function () {
         cadastarServico();
+    };
+
+    $scope.cadastroProduto = function(){
+        cadastrarProduto();
     };
 
     $scope.receber = function () {

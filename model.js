@@ -49,7 +49,7 @@ app.get('/login',function(req,res){
 });
 
 app.get('/produtos',function(req,res){
-	res.render('ProdutoServiços.html');
+	res.render('Produtos.html');
 });
 
 app.get('/servicos',function(req,res){
@@ -102,10 +102,10 @@ app.get('/cadastro_fisica',function(req,res){
     } 
 });
 
-app.get('/cadastro_ProdutoServicos',function(req,res){
+app.get('/cadastro_Produto',function(req,res){
     sess=req.session;
     if (sess.email){
-    	res.render('cadastro_ProdutoServicos.html');
+    	res.render('cadastro_Produtos.html');
     } 
     else {
     	res.render('login.html');
@@ -300,6 +300,34 @@ app.post('/cadastrarServico', function (req, res) {
 });
 //=============================================================
 
+//Método para cadastrar Produto
+app.post('/cadastrarProduto', function (req, res) {
+	canal.connect(function (erro, conexao, finalizado) {
+
+		if (erro) {
+			return console.error('Erro ao conectar ao Banco de Dados', erro);
+		}
+		console.log("********************************************");
+		console.log(req.body);
+		console.log("********************************************");
+		var sql = 'INSERT INTO TB_PRODUTO(ID_PRODUTO, DESCRICAO, QUANTIDADE, VALOR, FG_ATIVO)'
+			+ ' VALUES'
+			+ '(default, \'' +
+			req.body.descricao + '\', ' +
+			req.body.quantidade + '\, ' +
+			req.body.valor + '\, 1);';
+		console.log(sql);
+		conexao.query(sql, function (erro, resultado) {
+			finalizado();
+			if (erro) {
+				return console.error('Erro ao cadastrar serviço !', erro);
+			}
+			res.json("Serviço cadastrada com Sucesso !");
+
+		});
+	});
+});
+//=============================================================
 app.listen(3000, function () {
 	console.log("SERVIDOR ON");
 })
