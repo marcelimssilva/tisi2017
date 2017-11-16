@@ -1,0 +1,58 @@
+<!DOCTYPE>
+<html ng-app="Controller">
+
+<head>
+    <meta charset="utf-8" />
+    <title>login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/login.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <!-- LInkando arquivo .JS ao projeto -->
+    <script src="controller.js"></script>
+</head>
+
+<body ng-controller="Controller">
+    <div class="container">
+        <form action="" method="" accept-charset="utf-8" class="form-login">
+            <div class="row">
+                <div class=" col-md-12 text-center">
+                    <img class="img-responsive" src="image\login.png" alt="Imagem" />
+                    <br>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <div class="jumbotron">
+                <h3>Login</h3>
+                <label for="inputEmail" class="sr-only">E-mail</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email" ng-model="login.email" required autofocus>
+                <br>
+                <label for="inputPassword" class="sr-only">Senha</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" ng-model="login.senha" required>
+                <div class="checkbox">
+                    <label for="">
+                        <input type="checkbox" value="manter">Mantenha-me Conectado
+                    </label>
+                </div>
+                <div class="row">
+                    <span class="pull-left">
+                        <a href="">Esqueceu sua senha?</a>
+                    </span>
+                    <span class="pull-right">
+                        <a href="">Cadastre-se</a>
+                    </span>
+                </div>
+                <button type="button" class="btn btn-lg btn-primary btn-block" ng-click="entrar()">Entrar</button>
+        </form>
+        </div>
+    </div>
+</body>
+
+</html>

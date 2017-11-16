@@ -1,0 +1,19 @@
+{
+  "name": "tisi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "angular.min.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "pdfmake": "^0.1.33",
+    "pg": "^7.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,70 @@
+
+body > section > div.container{
+	padding-right: 0px !important;
+  padding-left: 0px !important;
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+}
+
+#no-margin {
+  margin: 10px 0px 0px !important;
+  padding: 0px;
+}
+
+.userForm {
+  margin-left: 0px;
+  float: right;
+}
+
+body > section > div > div> div > div > div > div > ul > li.menu-2 {
+  background: #f5f5f5;
+  color: #666;
+  border-radius: 0;
+  border: 0 none;
+  line-height: 24px;
+  margin-right:0;
+  padding: 160% 15px;
+}
+body {
+  height: 100%;
+}
+
+body > section > div > div> div > div > div > div > ul > li >a.menu-22{
+  background: transparent !important;
+  color: none !important;
+}
+
+
+body {
+	margin-bottom: 0px !important;
+}
+
+.glyphicon {
+	float: right;
+	font-size: 20px;
+}
+
+#btn-glyphicon{
+  float: left !important;
+  color: black;
+}
+
+body > form.container {
+
+  padding-bottom: 60px;
+}
+.glyphicon-map-marker{
+  float: none;
+}
+
+body >  form > div.form-inline > div > button{
+    background-color: #337ab7 !important; 
+}
+body >  form > div.form-inline > div > button:hover{
+    background-color: #204d74 !important;  
+}
+
+.userForm {
+  margin: 10px 0px 0px !important;
+}
+
