@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestão Smart</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="css/menu.css" rel="stylesheet">
+    <link href="css/cadastro_fisica.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
@@ -17,7 +17,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-cookies.min.js"></script> 
     <script src="fronts/controller/controller.js"></script> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
@@ -27,7 +26,7 @@
     <script src="js/jquery.mask.js"></script>
     <script src="js/bootstrap-datepicker.js"></script>
     <script src="js/locales/bootstrap-datepicker.pt-BR.js"></script>
-
+    <script src="js/cadastro_fisica.js"></script>
 </head>
 
 <body ng-controller="Controller" class="container-fluid" ng-init="receber()">
@@ -51,8 +50,80 @@
         <div class="row">
             <span id="btn-glyphicon" class="glyphicon glyphicon-list"></span>
         </div>
-        
-            <img id="imagem_time" class="img-responsive" src="../../image/portfolio/recent/item8.png" alt="">
+        <h2>
+            <b>Dados Cadastrais</b>
+        </h2>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label>Nome</label>
+                <input type="text" class="form-control" ng-model="cliente.nome" placeholder="Insira o Nome">
+            </div>
+            <div class="form-group col-md-4">
+                <label>Sobrenome</label>
+                <input type="text" class="form-control " ng-model="cliente.sobrenome" placeholder="Insira o Sobrenome">
+            </div>
+            <div class="form-group col-md-2">
+                <label>CPF</label>
+                <input id="cpf" type="text" class="form-control" ng-model="cliente.cpf" placeholder="Insira o CPF" maxlength="14">
+            </div>
+            <div class="form-group col-md-2">
+                <label>Nascimento</label>
+                <input id="dtNascimento" type="text" class="form-control" ng-model="cliente.dt_nascimento" placeholder="DD/MM/AA">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label>Telefone</label>
+                <input id="telefone" type="text" class="form-control" ng-model="cliente.telefone" placeholder="Insira o Telefone">
+            </div>
+            <div class="form-group col-md-4">
+                <label>Email</label>
+                <input type="text" class="form-control" ng-model="cliente.email" placeholder="Insira o Email">
+            </div>
+        </div>
+        <h2>
+            <b>Endereço
+                <span class="glyphicon glyphicon-map-marker"></span>
+            </b>
+        </h2>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label>Rua</label>
+                <input type="text" class="form-control" ng-model="cliente.rua" placeholder="Insira o Endereço">
+            </div>
+            <div class="form-group col-md-4">
+                <label>Bairro</label>
+                <input type="text" class="form-control" ng-model="cliente.bairro" placeholder="Insira o Bairro">
+            </div>
+            <div class="form-group col-md-2">
+                <label>Número</label>
+                <input type="text" class="form-control" ng-model="cliente.numero" placeholder="Insira o Número" maxlength="4">
+            </div>
+            <div class="form-group col-md-2">
+                <label>CEP</label>
+                <input id="cep" type="text" class="form-control" ng-model="cliente.cep" placeholder="Insira o CEP" maxlength="9">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label>Estado</label>
+                <input type="text" class="form-control" ng-model="cliente.estado" placeholder="Selecione o Estado">
+            </div>
+            <div class="form-group col-md-4">
+                <label>Cidade</label>
+                <input type="text" class="form-control" ng-model="cliente.cidade" placeholder="Selecione a Cidade">
+            </div>
+            <div class="form-group col-md-4">
+                <label>ID Empresa</label>
+                <input type="text" class="form-control" ng-model="cliente.id_empresa" placeholder="ID Empresa">
+            </div>
+        </div>
+        <div class="form-inline">
+            <div class="form-group ">
+                <button type="button" class="btn btn-primary form-control" ng-click="insereCliFisico()">Cadastrar</button>
+            </div>
+        </div>
     </form>
     <section id="no-margin">
         <div class="container">
@@ -68,7 +139,7 @@
                                         </a>
                                     </li>
                                     <li class="">
-                                        <a href="/logout">
+                                        <a href="/sair">
                                             <b>Sair
                                                 <span class="glyphicon glyphicon-log-out"></span>
                                             </b>
@@ -76,7 +147,7 @@
                                     </li>
                                     <li data-toggle="collapse" data-target="#new2" class="collapsed">
                                         <a href="#">
-                                            <b> Cliente
+                                            <b>Cadastrar Cliente
                                                 <span class="glyphicon glyphicon-floppy-disk "></span>
                                             </b>
                                         </a>
@@ -190,8 +261,6 @@
             </div>
         </div>
     </footer>
-
-
 
     <script>
         $("#btn-glyphicon").click(function () {
