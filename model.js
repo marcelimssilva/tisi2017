@@ -36,30 +36,6 @@ var canal = new pg.Pool(config);
 //-------------- TELAS --------------
 //===================================
 
-app.get('/index',function(req,res){
-	res.render('index.html');
-});
-
-app.get('/cadastro_site',function(req,res){
-	res.render('cadastro_site.html');
-});
-
-app.get('/login',function(req,res){
-	res.render('login.html');
-});
-
-app.get('/produtos',function(req,res){
-	res.render('Produtos.html');
-});
-
-app.get('/servicos',function(req,res){
-	res.render('Servicos.html');
-});
-
-app.get('/Cadastrar_Ordem_Servico',function(req,res){
-	res.render('Ordem_servico.html');
-});
-
 // encerra sessão
 app.get('/logout',function(req,res){		
 	req.session.destroy(function(err){		
@@ -72,6 +48,18 @@ app.get('/logout',function(req,res){
 
 
 // telas quer precisam de login
+app.get('/index',function(req,res){
+	res.render('index.html');
+});
+
+app.get('/cadastro_site',function(req,res){
+	res.render('cadastro_site.html');
+});
+
+app.get('/login',function(req,res){
+	res.render('login.html');
+});
+
 app.get('/menu',function(req,res){
     sess=req.session;
     if (sess.email){
@@ -102,30 +90,30 @@ app.get('/cadastro_fisica',function(req,res){
     } 
 });
 
-app.get('/cadastro_Produto',function(req,res){
+app.get('/Produtos',function(req,res){
     sess=req.session;
     if (sess.email){
-    	res.render('cadastro_Produtos.html');
+    	res.render('Produtos.html');
     } 
     else {
     	res.render('login.html');
     } 
 });
 
-app.get('/cadastro_Servico',function(req,res){
+app.get('/Servicos',function(req,res){
     sess=req.session;
     if (sess.email){
-    	res.render('cadastro_Servico.html');
+    	res.render('Servicos.html');
     } 
     else {
     	res.render('login.html');
     } 
 });
 
-app.get('/cadastro_OS',function(req,res){
+app.get('/Ordem_servico',function(req,res){
     sess=req.session;
     if (sess.email){
-    	res.render('cadastro_OS.html');
+    	res.render('Ordem_servico.html');
     } 
     else {
     	res.render('login.html');
