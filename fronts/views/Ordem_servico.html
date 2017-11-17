@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="Controller">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,62 +18,61 @@
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
-        <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-cookies.js"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-cookies.min.js"></script>
         <script src="js/jquery.js"></script> 
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.prettyPhoto.js"></script>
         <script src="js/jquery.isotope.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/wow.min.js"></script>
-        <script src="controller.js"></script>
         <script src="js/jquery.mask.js"></script>
         <script src="js/bootstrap-datepicker.js"></script>
         <script src="js/locales/bootstrap-datepicker.pt-BR.js"></script>
         <script src="js/cadastro_fisica.js"></script>
-        <script src="/front/controllers/controller"> </script>
+        <script src="fronts/controller/controller.js"></script>
     </head>
 
-<body ng-controller="Controller" class="container-fluid">
+<body ng-controller="Controller" class="container-fluid" ng-init="receber()">
     <header id="header">
         <div class="top-bar">
             <div class="container">
                 <div class="row" align="center">
                     <div class="col-sm-12">
-                        <div><p class="para">O²S - Ordem de Serviço Online {{usuario}} </p></div></div>
+                        <div><p class="para">Olá, {{usuario}}</p></div></div>
                     </div>
                 </div>
             </div><!--/.container-->
         </div><!--/.top-bar-->
     </header>   
-    <form id="formulario" class="container userForm " >
-        <div class="row">
-            <span id="btn-glyphicon" class="glyphicon glyphicon-list" ></span>
-        </div>
+ 	<form id="formulario" class="container userForm " >
+ 		<div class="row">
+ 			<span id="btn-glyphicon" class="glyphicon glyphicon-list" ></span>
+ 		</div>
 
                 <h2> Informações do Produto </h2>
         <div class="row">
             <div class="form-group col-md-4">
                 <label>Nome</label>
-                <input  type="text" class="form-control" ng-model="produtos.nome" placeholder="Insira o Nome" maxlength="14">
+                <input  type="text" class="form-control" ng-model="produto.descricao" placeholder="Descrição" >
         </div>
             <div class="form-group col-md-4">
                 <label>Quantidade</label>
-                <input type="number" class="form-control" ng-model="produtos.quantidade" placeholder="Insira a Quantidade">
+                <input type="number" class="form-control" ng-model="produto.quantidade" placeholder="Quantidade">
             </div>
             <div class="form-group col-md-4">
                 <label>Valor</label>
-                <input type="number" class="form-control" ng-model="produtos.valor" placeholder="Insira o Valor">
+                <input type="number" class="form-control" ng-model="produto.valor" placeholder="Valor">
             </div>
         </div>
                             
                     </div class="row">
                         <div class="form-inline">
                             <div class="form-group"> 
-                                <button  type="button" class="btn btn-primary" ng-click="cadastroProdutoServicos()" >Cadastrar</button>
+                                <button  type="button" class="btn btn-primary" ng-click="cadastroOS()" >Cadastrar</button>
                             </div>
                         </div>
                     </div>    
-    </form>
+ 	</form>
         
     <section id="no-margin">
         <div class="container">
@@ -213,9 +212,7 @@
         </div>
     </footer>
 
-
-    <script type="text/javascript">
-
+  <script>
         $("#btn-glyphicon").click(function () {
             if ($("#formulario").hasClass('userForm')){
                 $("#formulario").removeClass("userForm");
@@ -226,23 +223,7 @@
                 $("#no-margin").show();
             }
         });
-
     </script>
-    <script type="text/javascript">
-	            $('#multiselectOS').multiselect({
-	                includeSelectAllOption: true,
-	                enableFiltering: true
-	              	
-	            });
-        	
-       		   	$('#multiselectProduto').multiselect({
-	                includeSelectAllOption: true,
-	                enableFiltering: true
-	        
-		       	});
-	     	
-    </script>
-	</script>
 </body>
  
 </html>
